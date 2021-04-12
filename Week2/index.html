@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Road to the Final Four</title>
+	<meta charset="utf-8" />
+
+	<!-- style sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+	<div class="header", style="background-color: rgba(255, 253, 127, 0.911);">
+		<font size= "6"> The Conquest of UCLA Basketball</font>
+	</div>
+	<div class="sidebar", style="background-color: rgb(4, 0, 255);">
+		Inspired by the UCLA Basketball team's recent Final Four run, I decided to dedicate my map 
+		not to places I have been, but places our team "conquered" during our trip. Each marker will 
+		have a description of the game from my point of view on the bench, but out of our five wins, 
+		here are my rankings: 
+		<ol>
+			<li> Michigan</li>
+			<li> Alabama</li>
+			<li> Michigan State</li>
+			<li> BYU</li>
+			<li> Abilene Christian</li>
+		</ol>
+		Go Bruins!
+	</div>
+	<div class="content">
+		<div id="map"></div>
+	</div>
+
+    <script>
+		
+		let locations = [
+	{
+		'title':'Michigan State',
+		'description':'Final Score: 86-80 (Overtime). This game went from depressing to incredible in only 20 minutes. Coach gave a great halftime speech that really pushed us to victory. My voice was gone by the end.',
+		'lat': 42.701847,
+		'lon': -84.482170
+	},
+	{
+		'title':'BYU',
+		'description':'Final Score: 73-62. We knew we were going to win from the start. We controlled the game, and my briefly recovered voice was once again lost.',
+		'lat': 40.2518,
+		'lon': -111.6493
+	},
+	{
+		'title':'Abilene Christian',
+		'description':'Final Score: 67-47. After watching this team upset Texas in the first round, we prepared harder than ever for them. It paid off with a lopsided win, but was anything but easy.',
+		'lat': 32.4697,
+		'lon': -99.7081
+	},
+	{
+		'title':'Alabama',
+		'description':'Final Score: 88-78 (Overtime). After Alabama hit a game tying shot to send it to overtime, I just had more confidence that we would win. I knew we had built up the toughness to not let that beat us.',
+		'lat': 33.2140,
+		'lon': -87.5391
+	},
+	{
+		'title':'Michigan',
+		'description':'Final Score: 51-49. This was the first game I was nervous that we might lose. Each play felt like a heart attack in slow motion, but we played just hard enough and got just lucky enough to win.',
+		'lat': 42.2780,
+		'lon': -83.7382
+	}
+]
+var map = L.map('map');
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		locations.forEach(function(item){
+				L.marker([item.lat,item.lon]).addTo(map).bindPopup('<h3>'+item.title+'</h3>' +'<p>' + item.description + '</p').openPopup();		
+				})
+
+	map.setView([39.8283,-98.5795], 4)
+    </script>
+
+</body>
+</html>
