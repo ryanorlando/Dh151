@@ -55,16 +55,15 @@ let myMarkers = L.featureGroup();
 
 
 // loop through data
-data.forEach(function(item){
+data.forEach(function(item, index){
 	// create marker
-	let marker = L.marker([item.lat,item.lon], {icon: Icon}).bindPopup('<h3>'+item.title+'</h3>' +'<p>' + item.description + '</p' + "<br /> <br /> <img src ='" +
-	item.url + "' width=80% />")
+	let marker = L.marker([item.lat,item.lon], {icon: Icon}).bindPopup(`<h3>${item.title}</h3><p>${item.description}</p<br /> <br /> <img src ='${item.url}' width=80% />`)
 
 	// add marker to featuregroup
 	myMarkers.addLayer(marker)
 
 	// add data to sidebar with onclick event
-	$('.sidebar').append(`<div class="sidebar-item" onclick="flyByID(${item.id})">${item.title}</div>`)
+	$('.sidebar').append(`<div class="sidebar-item" onclick="flyToIndex(${index})">${item.title}</div>`)
 })
 
 
@@ -84,9 +83,8 @@ L.control.layers(null,layers).addTo(map)
 // make the map zoom to the extent of markers
 map.fitBounds(myMarkers.getBounds());
 
-
 // function to fly to a location by a given id number
-function flyByIndex(index){
+function flyToIndex(index){
 	map.flyTo([data[index].lat,data[index].lon],12)
 
 	// open the popup
