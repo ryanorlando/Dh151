@@ -4,7 +4,7 @@ let lat = 0;
 let lon = 0;
 let zl = 3;
 // path to csv data
-let path = "LA-times-archive.csv";
+let path = "Data/la-times-photo-archive.csv";
 // global variables
 let markers = L.featureGroup();
 
