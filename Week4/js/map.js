@@ -56,7 +56,7 @@ function mapCSV(data){
 			this.bindPopup(`<h3>${item.Caption}</h3> <img src ='${item.imageurl}' width=80% />`).openPopup()
 		})
 
-		$('.sidebar').append(`<img src="${item.imageurl}" onClick="zoomToImage(${index})", >`)
+		$('.sidebar').append(`${item.Caption}<br><img src="${item.imageurl}" onClick="zoomToImage(${index})", >`)
 		
 		// add marker to featuregroup
 		markers.addLayer(marker)
