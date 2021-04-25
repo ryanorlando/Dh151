@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LA Times Photo Archive</title>
+	<meta charset="utf-8" />
+
+	<!-- style sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="js/papaparse.min.js"></script>
+
+</head>
+<body>
+
+	<div class="header">
+		The LA Times Photo Archive
+	</div>
+	<div class="sidebar">
+		Taken from the UCLA Library Digital Archive, this dataset contains the photographs published in the LA Times 
+		from 1950-1990. From the sidebar, click each image to zoom to the location where it was taken and see the caption it was 
+		published with, if available. 
+		
+		<p> As is often the case when examining historical events, some of these titles and captions 
+			contain outdated language and terminology that would now be considered offensive, particularly with regard to minority 
+			populations.
+		</p> 
+	</div>
+	<div class="content">
+		<div id="map"></div>
+	</div>
+	<div class="footer">
+		Source: <a href="https://apps.gis.ucla.edu/geodata/dataset/la-times-photo-archive2">UCLA Library Digital Collections</a>
+	</div>
+
+	<script src="js/map.js"></script>
+
+</body>
+</html>
