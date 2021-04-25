@@ -73,6 +73,6 @@ function zoomToImage(index){
 	map.setZoom(18);
 	map.panTo(markers.getLayers()[index]._latlng);
 	// open the popup
-	myMarkers.getLayers()[index].openPopup();
+	markers.getLayers()[index].openPopup();
 }
 
