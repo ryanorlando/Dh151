@@ -4,7 +4,7 @@ let lat = 0;
 let lon = 0;
 let zl = 3;
 // path to csv data
-let path = "data/[activism, identity, race] LA Times Photos (California, 1950-90) - la-times-photo-archive.csv";
+let path = "LA-times-archive.csv";
 // global variables
 let markers = L.featureGroup();
 
