@@ -224,6 +224,7 @@ function createDashboard(properties){
 		chart: {
 			type: 'bar',
 			height: 300,
+            /*color: 'red',*/
 			animations: {
 				enabled: true,
 			}

@@ -2,6 +2,7 @@ body,html {
 	margin:0;
 	height:100%;
 	width:100%;
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", "Segoe UI", "Lucida Grande", Verdana, Tahoma, Arial, sans-serif;
 }
 
 #map {
@@ -14,25 +15,30 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
 	"header header"
-	"content dashboard"
+	"content content" 
+    "dashboard dashboard"
     "footer footer";
 }
 
 .dashboard {
 	background-color: #ccc;
-	grid-area: dashboard
+	grid-area: dashboard;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .header {
 	grid-area: header;
 	padding:10px;
-	background-color: #333;
-	color: white;
+	color:#3d3800;
 	font-size: 2em;
+    background-color:#eeebe3;
 }
 
 .content {
 	grid-area: content;
+    background-color:#e5e1d6;
 }
 
 /* legend styles */
@@ -73,4 +79,6 @@ body {
     grid-area: footer;
     padding:15px;
     height: 50px;
+    background-color:#eeebe3;
+    color:#3d3800;
 }
