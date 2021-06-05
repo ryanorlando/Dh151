@@ -244,7 +244,10 @@ function createDashboard(properties){
 		],
 		xaxis: {
 			categories: fields
-		}
+		},
+        theme: {
+            palette: 'palette9'
+          }
 	}
 	
 	// create the chart
